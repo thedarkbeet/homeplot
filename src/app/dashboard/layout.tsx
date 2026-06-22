@@ -1,11 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 type DashboardLayoutProps = {
   children: React.ReactNode;
 };
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
+  const [text, setText] = useState("");
   return (
     <div className="flex flex-row min-h-[calc(100vh-2rem)] border-4 border-blue-500 rounded-xl m-4 overflow-hidden">
       <aside className="w-64 bg-blue-50 p-6 border-r border-blue-100 flex flex-col">
@@ -24,6 +27,13 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           </Link>
 
         </nav>
+
+        <div className="mt-auto pt-6 border-t border-blue-200">
+          <label className="block text-[10px] font-bold text-blue-400 uppercase mb-2">
+            Persistent State (Layout)
+          </label>
+          <input type="text" value={text} onChange={e => setText(e.target.value)} className="w-full p-2 text-sm border border-blue-200 rounded bg-white text-black focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Enter text" />
+        </div>
       </aside>
       <main className="flex-1 flex flex-col bg-white p-8">
         {children}
