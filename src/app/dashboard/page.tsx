@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate a delay
+
   return (
     <div className="p-4 bg-emerald-50 border-2 border-emerald-500 rounded-md">
       <h1 className="text-xl font-bold text-black">
