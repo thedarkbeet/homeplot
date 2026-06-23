@@ -1,7 +1,9 @@
 import React from "react";
 
 export default async function Dashboard() {
-  await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate a delay
+  // await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate a delay
+
+  // throw new Error("This is a test error");
 
   return (
     <div className="p-4 bg-emerald-50 border-2 border-emerald-500 rounded-md">
